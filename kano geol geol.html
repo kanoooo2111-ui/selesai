@@ -1,0 +1,1637 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <audio src="SpotiDown.App - Tujuh Belas - Tulus.mp3"></audio>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website Kelas IX C</title>
+    <link rel="stylesheet" href="mm.css" />
+    <style>
+      /* Import Font Google */
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+      /* Reset Dasar */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: #3f9afb;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Navigasi */
+      header {
+        background-color: #2c3e50;
+        color: white;
+        padding: 15px 10px;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      header h1 {
+        margin-bottom: 8px;
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      nav a {
+        color: #ecf0f1;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        padding: 4px 8px;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #1ed598;
+      }
+
+      /* CSS SISTEM GANTI HALAMAN (MENU) */
+      section {
+        display: none;
+        animation: fadeIn 0.4s ease-in-out forwards;
+      }
+
+      section.active-page {
+        display: block;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Hero Section (Beranda) dengan Foto Kelas 16:9 */
+      .hero {
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
+          url("fotbar sekelas.jpeg") center/cover no-repeat;
+        width: 100%;
+        max-width: 1100px;
+        aspect-ratio: 16 / 9;
+        margin: 20px auto;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        overflow: hidden;
+      }
+
+      .hero-content {
+        background: rgba(0, 0, 0, 0.4);
+        padding: 20px 30px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        max-width: 85%;
+      }
+
+      .hero h2 {
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+      }
+
+      .hero p {
+        font-size: 1rem;
+        max-width: 600px;
+        margin: auto;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        padding: 30px 15px;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 1.8rem;
+        color: #2c3e50;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+      }
+
+      .card {
+        background: white;
+        padding: 20px 15px;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 220px;
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+        cursor: pointer;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .card img {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        margin-bottom: 12px;
+        background-color: #bdc3c7;
+        object-fit: cover;
+      }
+
+      .card h3 {
+        font-size: 1.1rem;
+        color: #3498db;
+      }
+
+      .card p {
+        font-size: 0.9rem;
+      }
+
+      .siswa-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 12px;
+        margin-top: 15px;
+      }
+
+      .siswa-card {
+        background: linear-gradient(135deg, #3498db, #2c3e50);
+        color: white;
+        padding: 12px 10px;
+        border-radius: 8px;
+        text-align: center;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-size: 0.88rem;
+        word-break: break-word;
+        cursor: pointer;
+      }
+
+      .siswa-card:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        background: linear-gradient(135deg, #1ed598, #2c3e50);
+      }
+
+      .jadwal-box,
+      .piket-box,
+      .media-box {
+        background: white;
+        padding: 25px 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .jadwal-box ul,
+      .piket-box ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .jadwal-box li,
+      .piket-box li {
+        padding: 10px 0;
+        border-bottom: 1px dashed #eee;
+        font-size: 1rem;
+      }
+
+      /* Galeri Grid */
+      .galeri-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 15px;
+        margin-top: 15px;
+      }
+
+      .galeri-item {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .galeri-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .galeri-item img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+      }
+
+      .galeri-item p {
+        padding: 10px;
+        text-align: center;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #2c3e50;
+      }
+
+      /* Tombol Media Sosial & Spotify */
+      .social-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      .btn-social {
+        display: inline-block;
+        padding: 12px 25px;
+        font-size: 1rem;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        transition:
+          transform 0.2s,
+          opacity 0.2s;
+      }
+
+      .btn-ig {
+        background: linear-gradient(
+          45deg,
+          #f09433,
+          #e6683c,
+          #dc2743,
+          #cc2366,
+          #bc1888
+        );
+      }
+
+      .btn-spotify {
+        background: #1db954;
+      }
+
+      .btn-social:hover {
+        transform: scale(1.05);
+        opacity: 0.9;
+      }
+
+      footer {
+        background-color: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 20px 15px;
+        margin-top: 40px;
+        font-size: 0.9rem;
+      }
+
+      /* CSS Welcome Screen */
+      .welcome-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(135deg, #2c3e50, #07dad6);
+        z-index: 99999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition:
+          opacity 0.8s ease-in-out,
+          transform 0.8s ease-in-out;
+      }
+      .welcome-screen.hidden {
+        opacity: 0;
+        transform: translateY(-100%);
+        pointer-events: none;
+      }
+      .welcome-content {
+        text-align: center;
+        color: white;
+      }
+      .welcome-content h2 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
+      #enter-btn {
+        padding: 12px 30px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #2c3e50;
+        background: white;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+      }
+
+      /* Modal Pop-up Biodata */
+      .modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+      }
+      .modal-overlay.active {
+        display: flex;
+      }
+      .modal-content {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        width: 90%;
+        max-width: 400px;
+        position: relative;
+      }
+      .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #7f8c8d;
+      }
+      .biodata-title {
+        color: #2c3e50;
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #1ed598;
+        padding-bottom: 5px;
+        text-align: center;
+      }
+      .biodata-list {
+        list-style: none;
+        padding: 0;
+      }
+      .biodata-list li {
+        margin-bottom: 12px;
+        font-size: 0.95rem;
+        color: #34495e;
+        border-bottom: 1px dashed #ecf0f1;
+        padding-bottom: 8px;
+      }
+      .biodata-list strong {
+        color: #2c3e50;
+        display: inline-block;
+        width: 130px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- =========================================
+         WELCOME SCREEN + LAYAR LOADING (WAITING)
+         ========================================= -->
+    <div id="welcome-screen" class="welcome-screen">
+      <!-- 1. Tampilan Awal Sebelum Diklik -->
+      <div class="welcome-content" id="welcome-initial">
+        <h2>Welcome to IX-C</h2>
+        <button id="enter-btn">Masuk ke Website</button>
+      </div>
+
+      <!-- 2. Tampilan Waiting/Loading (Muncul Setelah Tombol Diklik) -->
+      <div class="loader-content" id="welcome-loader" style="display: none">
+        <div class="loader-icon">🎓</div>
+        <h2 class="loader-text">WAITING...</h2>
+
+        <div class="progress-container">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <div class="progress-text" id="progressText">0%</div>
+      </div>
+    </div>
+    <header>
+      <h1>KELAS IX C</h1>
+      <nav>
+        <a href="#beranda">Beranda</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#pengurus">Pengurus</a>
+        <a href="#anggota">Anggota</a>
+        <a href="#jadwal">Jadwal</a>
+        <a href="#piket">Piket</a>
+        <a href="#galeri">Galeri</a>
+        <a href="#media">Media</a>
+        <a href="#pesan">Pesan & Kesan</a>
+        <a href="#rahasia" style="color: #e74c3c">Easter Egg 🤫</a>
+      </nav>
+      </nav>
+    
+   <!-- MASKOT CHIBI BERJALAN DARI UJUNG KE UJUNG -->
+    <div class="chibi-walking-container">
+        <!-- Nanti src="chibi-jalan.gif" sesuaikan dengan nama gambar/gif-mu -->
+        <img src="chibi imut.png" alt="Maskot IX C Jalan" class="chibi-walker">
+    </div>
+</header>
+    </header>
+
+    <div class="container">
+      <section id="beranda" class="active-page">
+        <div class="hero">
+          <div class="hero-content">
+            <h2>Welcome to Website IX C!</h2>
+            <p>
+              Solid dan kreatif. Ini adalah ruang digital tempat kami berbagi
+              cerita, dan kenangan selama di kelas IX-C. Silahkan melihat lihat
+              halaman lainnya yaa, jangan lupa beri kami pesan dan kesan di
+              halaman terakhir, terima kasihhhh
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="tentang">
+        <h2 class="section-title">ABOUT OUR CLASS</h2>
+        <p
+          style="
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+            font-size: 1rem;
+            color: #444;
+          "
+        >
+          Class IX-C adalah bagian dari SMP 16 Samarinda, dengan jumlah siswa
+          sebanyak 33 orang. Terdiri dari 19 laki laki dan 14 perempuan. Kami
+          adalah angkatan 35 dari tahun 2024 hingga 2026. Kami membuat website ini untuk mengenang masa-masa kami di kelas IX-C, dan juga sebagai media untuk berbagi informasi, kenangan, dan cerita selama kami berada di kelas ini. Semoga website ini dapat menjadi kenangan yang indah bagi kami semua.
+        </p>
+      </section>
+
+      <section id="pengurus">
+        <h2 class="section-title">Pengurus Kelas 9C</h2>
+        <div class="cards">
+          <div
+            class="card"
+            data-fullname="Sri Wiyanti, S.Pd"
+            data-nickname="Bu Sri"
+            data-birthday="12 Maret 1969"
+            data-hobby="Traveling"
+            data-eskul="-"
+          >
+            <img src="bu sri.jpeg" alt="Wali Kelas" />
+            <h3>Ibu SRI WIYANTI</h3>
+            <p>Wali Kelas</p>
+          </div>
+          <div
+            class="card"
+            data-fullname="M. Sukarno Putra"
+            data-nickname="sukarno"
+            data-birthday="21 April 2011"
+            data-hobby="Baca buku"
+            data-eskul="Ansamble musik"
+          >
+            <img src="SUKARNO.jpeg" alt="Ketua Kelas" />
+            <h3>M.SUKARNO PUTRA</h3>
+            <p>Ketua Kelas</p>
+          </div>
+          <div
+            class="card"
+            data-fullname="Avika Lavina H"
+            data-nickname="Vika"
+            data-birthday="14 January 2012"
+            data-hobby="Membaca"
+            data-eskul="Badminton, Osis"
+          >
+            <img src="vika.jpeg" alt="Wakil Ketua" />
+            <h3>AVIKA LAVINA H</h3>
+            <p>Wakil Ketua</p>
+          </div>
+          <div
+            class="card"
+            data-fullname="Khansa Nasifah Q"
+            data-nickname="khansa"
+            data-birthday="10 January 2012"
+            data-hobby="Tidur"
+            data-eskul="Tari"
+          >
+            <img src="khansabert enstain2.jpeg" alt="Sekretaris 2" />
+            <h3>KHANSA NASIFAH Q</h3>
+            <p>Sekretaris 1</p>
+          </div>
+
+          <div
+            class="card"
+            data-fullname="Ilmiatul Mufida"
+            data-nickname="ilmi"
+            data-birthday="5 juli 2011"
+            data-hobby="menulis"
+            data-eskul="paskibra"
+          >
+            <img src="ilmi.jpeg" alt="Sekretaris 1" />
+            <h3>ILMIATUL MUFIDA</h3>
+            <p>Sekretaris 2</p>
+          </div>
+          <div
+            class="card"
+            data-fullname="Gita Revalina S"
+            data-nickname="Gita"
+            data-birthday="24 Mei 2012"
+            data-hobby="-"
+            data-eskul="Tidak ada"
+          >
+            <img src="gita2.jpeg" alt="Bendahara 1" />
+            <h3>GITA SINAMBELA</h3>
+            <p>Bendahara 1</p>
+          </div>
+          <div
+            class="card"
+            data-fullname="Nuradelia"
+            data-nickname="Adel"
+            data-birthday="18 Oktober 2011"
+            data-hobby="main"
+            data-eskul="tari"
+          >
+            <img src="adel.jpeg" alt="Bendahara 2" />
+            <h3>NURADELIA</h3>
+            <p>Bendahara 2</p>
+          </div>
+          <div
+            class="card"
+            data-fullname="Nayra Nazwha"
+            data-nickname="Nayra"
+            data-birthday="11 Juni 2011"
+            data-hobby="tidur"
+            data-eskul="-"
+          >
+            <img src="nera.jpeg" alt="Kebersihan 1" />
+            <h3>NAYRA NAZWHA</h3>
+            <p>Kebersihan 1</p>
+          </div>
+          <div
+            class="card"
+            data-fullname="Rayqal Aditiya P"
+            data-nickname="Rayqal"
+            data-birthday="04 November 2010"
+            data-hobby="badminton"
+            data-eskul="Pramuka"
+          >
+            <img src="rayqal.jpeg" alt="Kebersihan 2" />
+            <h3>RAYQAL ADITIYA P</h3>
+            <p>Kebersihan 2</p>
+          </div>
+          <div
+            class="card"
+            data-fullname="Anung Zaki D.C"
+            data-nickname="Anung"
+            data-birthday="15 Mei 2010"
+            data-hobby="bermain sepak bola"
+            data-eskul="futsal"
+          >
+            <img src="anung.jpeg" alt="Keamanan 1" />
+            <h3>ANUNG ZAKI D.C</h3>
+            <p>Keamanan 1</p>
+          </div>
+          <div
+            class="card"
+            data-fullname="Aquila Jennifer S"
+            data-nickname="lila"
+            data-birthday="17 September 2011"
+            data-hobby="Bernyanyi"
+            data-eskul="Ansambel musik, Basket"
+          >
+            <img src="lila.jpeg" alt="Keamanan 2" />
+            <h3>AQUILA JENNIFER S</h3>
+            <p>Keamanan 2</p>
+          </div>
+          <div
+            class="card"
+            data-fullname="M. Dwinoor H"
+            data-nickname="mizan"
+            data-birthday="-"
+            data-hobby="-"
+            data-eskul="-"
+          >
+            <img src="mizan.jpeg" alt="Keagamaan 1" />
+            <h3>M. DWINOOR H</h3>
+            <p>Keagamaan 1</p>
+          </div>
+          <div
+            class="card"
+            data-fullname="Stefanny Alexander P"
+            data-nickname="fanny"
+            data-birthday="9 Juli 2011"
+            data-hobby="Main HP"
+            data-eskul="futsal"
+          >
+            <img src="fanny.jpeg" alt="Keagamaan 2" />
+            <h3>STEFANNY ALEXANDER P</h3>
+            <p>Keagamaan 2</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="anggota">
+        <h2 class="section-title">Anggota Kelas IX C</h2>
+        <input type="text" id="searchAnggota" class="search-bar" placeholder="🔍 Cari nama anggota kelas di sini...">
+        <div class="siswa-grid">
+          <div
+            class="siswa-card"
+            data-fullname="Agia pamela watti"
+            data-nickname="Agia"
+            data-birthday="-"
+            data-hobby="-"
+            data-eskul="-"
+          >
+            👤 1. Agia pamela watti
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Agmal galang ramadhan"
+            data-nickname="Agmal"
+            data-birthday="-"
+            data-hobby="-"
+            data-eskul="-"
+          >
+            👤 2. Agmal galang ramadhan
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Anung zaki dwi cahyo"
+            data-nickname="Anung"
+            data-birthday="15-05-2010"
+            data-hobby="bermain sepak bola"
+            data-eskul="futsal"
+          >
+            👤 3. Anung zaki dwi cahyo
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Aquila jenifer sondakh"
+            data-nickname="lila"
+            data-birthday="17-09-2011"
+            data-hobby="nyanyi"
+            data-eskul="ansamble musik, basket"
+          >
+            👤 4. Aquila jenifer sondakh
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Avika lavina hasya"
+            data-nickname="Avika"
+            data-birthday="14-1-2012"
+            data-hobby="membaca"
+            data-eskul="badminton, osis"
+          >
+            👤 5. Avika lavina hasya
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Azka Saputra"
+            data-nickname="Azka"
+            data-birthday="29-03-2010"
+            data-hobby="jalan-jalan"
+            data-eskul="-"
+          >
+            👤 6. Azka Saputra
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Bayu surya Pratama"
+            data-nickname="Bayu"
+            data-birthday="-"
+            data-hobby="-"
+            data-eskul="-"
+          >
+            👤 7. Bayu surya Pratama
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Bintang zahira rahmadania"
+            data-nickname="Bintang"
+            data-birthday="27-7-2012"
+            data-hobby="semua hobi"
+            data-eskul="-"
+          >
+            👤 8. Bintang zahira rahmadania
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Fitriah faridah rudy"
+            data-nickname="faridah"
+            data-birthday="31-01-2012"
+            data-hobby="menggambar"
+            data-eskul="-"
+          >
+            👤 9. Fitriah faridah rudy
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Gita revalina sinambela"
+            data-nickname="Gita"
+            data-birthday="20-06-2012"
+            data-hobby="-"
+            data-eskul="-"
+          >
+            👤 10. Gita revalina sinambela
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Ilmiatul Mufida"
+            data-nickname="Ilmi"
+            data-birthday="05-07-2011"
+            data-hobby="menulis"
+            data-eskul="paskibra"
+          >
+            👤 11. Ilmiatul Mufida
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Jelita sinaga"
+            data-nickname="Jelita"
+            data-birthday="10-05-2011"
+            data-hobby="nonton anime"
+            data-eskul="-"
+          >
+            👤 12. Jelita sinaga
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Khansa Nasifah Qanita"
+            data-nickname="Khansa"
+            data-birthday="10-01-2012"
+            data-hobby="tidur"
+            data-eskul="Tari"
+          >
+            👤 13. Khansa Nasifah Qanita
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Marsela novalin priska"
+            data-nickname="sela"
+            data-birthday="01-03-2012"
+            data-hobby="main game"
+            data-eskul="-"
+          >
+            👤 14. Marsela novalin priska
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Muhammad Maulana irawan"
+            data-nickname="lana"
+            data-birthday="02-11-2012"
+            data-hobby="bermain game"
+            data-eskul="-"
+          >
+            👤 15. Muhammad Maulana irawan
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Muhammad rizky ramdani"
+            data-nickname="Rizky"
+            data-birthday="11-03-2011"
+            data-hobby="naik ke jalur"
+            data-eskul="futsal"
+          >
+            👤 16. Muhammad rizky ramdani
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Muhammad adam satrio"
+            data-nickname="Adam"
+            data-birthday="-"
+            data-hobby="-"
+            data-eskul="-"
+          >
+            👤 17. Muhammad adam satrio
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Muhammad adli arana"
+            data-nickname="Adli"
+            data-birthday="-"
+            data-hobby="-"
+            data-eskul="-"
+          >
+            👤 18. Muhammad adli arana
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Muhammad dwinoor hamizan"
+            data-nickname="Dwinoor"
+            data-birthday="-"
+            data-hobby="-"
+            data-eskul="-"
+          >
+            👤 19. Muhammad dwinoor hamizan
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Muhammad fakhri nut yasir"
+            data-nickname="Fakhri"
+            data-birthday="04-9-2011"
+            data-hobby="main game"
+            data-eskul="-"
+          >
+            👤 20. Muhammad fakhri nut yasir
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Muhammad maulana ilyas"
+            data-nickname="Ilyas"
+            data-birthday="-"
+            data-hobby="-"
+            data-eskul="-"
+          >
+            👤 21. Muhammad maulana ilyas
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Muhammad rafi"
+            data-nickname="Rafi"
+            data-birthday="-"
+            data-hobby="-"
+            data-eskul="-"
+          >
+            👤 22. Muhammad rafi
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Muhammad Sukarno Putra"
+            data-nickname="Sukarno"
+            data-birthday="21-04-2011"
+            data-hobby="membaca"
+            data-eskul="ansamble musik"
+          >
+            👤 23. Muhammad Sukarno Putra
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Nayra Nazwha"
+            data-nickname="nera"
+            data-birthday="11-06-2011"
+            data-hobby="tidur"
+            data-eskul="-"
+          >
+            👤 24. Nayra Nazwha
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Nur adelia"
+            data-nickname="adel"
+            data-birthday="18-10-2011"
+            data-hobby="main"
+            data-eskul="tari"
+          >
+            👤 25. Nur adelia
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Putra septian"
+            data-nickname="Putra"
+            data-birthday="4-09-2011"
+            data-hobby="naik wp"
+            data-eskul="-"
+          >
+            👤 26. Putra septian
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Rayqal aditiya Pratama"
+            data-nickname="Rayqal"
+            data-birthday="4-11-2010"
+            data-hobby="badminton"
+            data-eskul="pramuka"
+          >
+            👤 27. Rayqal aditiya Pratama
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Reyhan qamar Nesha ramadhan"
+            data-nickname="Reyhan"
+            data-birthday="-"
+            data-hobby="-"
+            data-eskul="-"
+          >
+            👤 28. Reyhan qamar Nesha ramadhan
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Reza adistiya pratama"
+            data-nickname="Reza"
+            data-birthday="25-06-2011"
+            data-hobby="jalan-jalan"
+            data-eskul="-"
+          >
+            👤 29. Reza adistiya pratama
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Riyan ramadhan"
+            data-nickname="Riyan"
+            data-birthday="14-08-2011"
+            data-hobby="  desain grafis"
+            data-eskul="taekwondo"
+          >
+            👤 30. Riyan ramadhan
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Rizcyta sary devy tatipatta"
+            data-nickname="Devy"
+            data-birthday="06-09-2011"
+            data-hobby="nyanyi"
+            data-eskul="-"
+          >
+            👤 31. Rizcyta sary devy tatipatta
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Stefanny alexander putri"
+            data-nickname="fanny"
+            data-birthday="07-09-2011"
+            data-hobby="main hp"
+            data-eskul="futsal"
+          >
+            👤 32. Stefanny alexander putri
+          </div>
+          <div
+            class="siswa-card"
+            data-fullname="Yundi anugrah Pratama"
+            data-nickname="Yundi"
+            data-birthday="-"
+            data-hobby="-"
+            data-eskul="-"
+          >
+            👤 33. Yundi anugrah Pratama
+          </div>
+        </div>
+      </section>
+
+      <section id="jadwal">
+        <h2 class="section-title">Jadwal Pelajaran</h2>
+        <div class="jadwal-box">
+          <ul>
+            <li><strong>Senin:</strong> Upacara, SBDP, IPS, IPA</li>
+            <li><strong>Selasa:</strong> AGAMA, PPKN, IPA</li>
+            <li><strong>Rabu:</strong> IPS, B ING, B INDO, TIK</li>
+            <li><strong>Kamis:</strong> B ING, B INDO, MTK, PENJASKES</li>
+            <li><strong>Jumat:</strong> MTK / B INDO</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="piket">
+        <h2 class="section-title">Jadwal Piket Kelas</h2>
+        <div class="piket-box">
+          <ul>
+            <li>
+              <strong>Senin:</strong> fitriah, jelita, iky, galang, vika, adam
+            </li>
+            <li>
+              <strong>Selasa:</strong> adel, putra, rayqal, khansa, sukarno,
+              lila
+            </li>
+            <li>
+              <strong>Rabu:</strong> lana, reyhan, sella, fanny, gita, nayra,
+              mizan
+            </li>
+            <li>
+              <strong>Kamis:</strong> riyan ,ilyas, adli, azka, agia, bintang,
+              yundi
+            </li>
+            <li>
+              <strong>Jumat:</strong> bayu, ilmi, fahri, rapi, anung, devy, reza
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="galeri" class="section-content">
+        <h2 class="section-title">Galeri Kenangan IX C</h2>
+
+        <!-- KATEGORI 1: Di luar sekolah -->
+        <div class="kategori-galeri">
+          <h3>Di luar sekolah</h3>
+          <div class="slider-galeri">
+            <!-- Tambahkan foto-foto lomba di sini -->
+            <div class="galeri-item">
+              <img src="gambar kelas (5).jpg" alt="Lomba 1" />
+              <p> </p>
+            </div>
+            <div class="galeri-item">
+              <img src="gambar kelas (6).jpg" alt="Lomba 2" />
+              <p> </p>
+            </div>
+            <div class="galeri-item">
+              <img src="gambar kelas (9).jpg" alt="Lomba 3" />
+              <p> </p>
+            </div>
+            <div class="galeri-item">
+              <img src="gambar kelas (11).jpg" alt="Lomba 4" />
+              <p></p>
+            </div>
+           <div class="galeri-item">
+              <img src="IMG_5229.JPG.jpeg" alt="Lomba 3" />
+              <p> </p>
+            </div>
+            <div class="galeri-item">
+              <img src="IMG_5231.JPG.jpeg" alt="Lomba 4" />
+              <p></p>
+            </div>
+        
+          </div>
+        </div>
+
+
+
+         <!-- KATEGORI 1: Di luar sekolah -->
+        <div class="kategori-galeri">
+          <h3>Di sekolah</h3>
+          <div class="slider-galeri">
+            <!-- Tambahkan foto-foto lomba di sini -->
+            <div class="galeri-item">
+              <img src="fotbar sekelas.jpeg" alt="Lomba 1" />
+              <p> </p>
+            </div>
+            <div class="galeri-item">
+              <img src="gambar kelas (1).jpg" alt="Lomba 2" />
+              <p> </p>
+            </div>
+            <div class="galeri-item">
+              <img src="gambar kelas (2).jpg" alt="Lomba 3" />
+              <p> </p>
+            </div>
+            <div class="galeri-item">
+              <img src="gambar kelas (3).jpg" alt="Lomba 4" />
+              <p></p>
+            </div>
+            <div class="galeri-item">
+              <img src="gambar kelas (4).jpg" alt="Lomba 3" />
+              <p> </p>
+            </div>
+            <div class="galeri-item">
+              <img src="gambar kelas (7).jpg" alt="Lomba 4" />
+              <p></p>
+            </div>
+            <div class="galeri-item">
+              <img src="gambar kelas (10).jpg" alt="Lomba 3" />
+              <p> </p>
+            </div>
+            <div class="galeri-item">
+              <img src="gambar kelas (12).jpg" alt="Lomba 4" />
+              <p></p>
+            </div>
+            <div class="galeri-item">
+              <img src="gambar kelas (13).jpg" alt="Lomba 3" />
+              <p> </p>
+            </div>
+            <div class="galeri-item">
+              <img src="gambar kelas (14).jpg" alt="Lomba 4" />
+              <p></p>
+            </div>
+             <div class="galeri-item">
+              <img src="kelas (8).jpeg" alt="Lomba 4" />
+              <p></p>
+            </div>
+            <div class="galeri-item">
+              <img src="kelas (10).jpeg" alt="Lomba 4" />
+              <p></p>
+            </div>
+             <div class="galeri-item">
+              <img src="kelas (12).jpeg" alt="Lomba 4" />
+              <p></p>
+            </div>
+             <div class="galeri-item">
+              <img src="kelas (13).jpeg" alt="Lomba 4" />
+              <p></p>
+            </div>
+            <div class="galeri-item">
+              <img src="fotbar.jpeg" alt="Lomba 4" />
+              <p></p>
+            </div>
+             <div class="galeri-item">
+              <img src="fotbar 2.jpeg" alt="Lomba 4" />
+              <p></p>
+            </div>
+             <div class="galeri-item">
+              <img src="fotbar 3.jpeg" alt="Lomba 4" />
+              <p></p>
+            </div>
+             <div class="galeri-item">
+              <img src="fotbarr.jpeg" alt="Lomba 4" />
+              <p></p>
+            </div>
+             <div class="galeri-item">
+              <img src="FOTBARRRRR.jpeg" alt="Lomba 4" />
+              <p></p>
+            </div>
+        </div>
+
+       
+
+        <!-- KATEGORI 3: Random-->
+        <div class="kategori-galeri">
+          <h3>random</h3>
+          <div class="slider-galeri">
+            <!-- Tambahkan foto-foto harian di sini -->
+            <div class="galeri-item">
+              <img src="gambar 6 (17).jpeg" alt="Kegiatan 1" />
+              <p></p>
+            </div>
+            <div class="galeri-item">
+              <img src="gambar 6 (19).jpeg" alt="Kegiatan 2" />
+              <p></p>
+            </div>
+            <div class="galeri-item">
+              <img src="gambar 6 (28).jpeg" alt="Kegiatan 3" />
+              <p></p>
+            </div>
+            <div class="galeri-item">
+              <img src="gambar 6 (36).jpeg" alt="Kegiatan 4" />
+              <p></p>
+            </div>
+            <div class="galeri-item">
+              <img src="gambar 6 (38).jpeg" alt="Lomba 3" />
+              <p></p>
+          </div>
+          <div class="galeri-item">
+              <img src="gambar kelas (15).jpg" alt="Lomba 3" />
+              <p></p>
+            </div>
+            <div class="galeri-item">
+              <img src="gambar kelas (17).jpg" alt="Lomba 4" />
+              <p></p>
+            </div>
+            <div class="galeri-item">
+              <img src="gambar kelas (18).jpg" alt="Lomba 3" />
+              <p> </p>
+            </div>
+            <div class="galeri-item">
+              <img src="kelas (11).jpeg" alt="Lomba 4" />
+              <p></p>
+            </div>
+             <div class="galeri-item">
+              <img src="kelas (9).jpeg" alt="Lomba 4" />
+              <p></p>
+            </div>
+        </div>
+
+
+
+
+      </section>
+      <!-- ================= HALAMAN MEDIA ================= -->
+      <section id="media">
+        <h2 class="section-title">Media & Playlist Kelas</h2>
+        <div class="media-box" style="text-align: center">
+          <p style="margin-bottom: 20px; color: #555">
+            Yuk, ikuti keseruan dan dengarkan playlist musik favorit anak-anak IX C!
+          </p>
+          <div class="social-buttons">
+            <a href="https://www.instagram.com/9creativee_9.3?igsh=MTV0bmRyY2g5cjV3ZA==" target="_blank" class="btn-social btn-ig">📸 Instagram Kelas IX C</a>
+            <a href="https://open.spotify.com/playlist/6VH5ffVoDb9MVzXe1KNoUz?si=avdKk_gNR8Wsb1zKZ6pBaA&utm_source=copy-link&pi=Q1bRLeXSS1G-Q&sci=spotify%3Acard-config%3A6YqemdSBSMwfKysx5y5DNk" target="_blank" class="btn-social btn-spotify">🎵 Playlist Spotify IX C</a>
+          </div>
+        </div>
+      </section>
+    </div> <!-- 🛑 INI ADALAH PENUTUP CONTAINER YANG KEMARIN HILANG/BOCOR -->
+
+
+    <!-- ================= HALAMAN PESAN & KESAN ================= -->
+    <section id="pesan" class="section-content">
+      <div class="container">
+        
+        <h2 class="section-title">Hitung Mundur Kelulusan</h2>
+        
+        <!-- WADAH KOTAK ANGKA -->
+        <div class="countdown-container" id="countdown">
+          <div class="countdown-box"><span id="days">00</span>Hari</div>
+          <div class="countdown-box"><span id="hours">00</span>Jam</div>
+          <div class="countdown-box"><span id="minutes">00</span>Menit</div>
+          <div class="countdown-box"><span id="seconds">00</span>Detik</div>
+        </div>
+
+        <!-- MESIN CONFETTI -->
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+        <!-- SCRIPT HITUNG MUNDUR -->
+        <script>
+          // Target kelulusan menggunakan Bahasa Inggris
+          const targetKelulusan = new Date("Juni 20, 2027 10:00:00").getTime();
+
+          const hitungMundur = setInterval(function () {
+            const sekarang = new Date().getTime();
+            const sisaWaktu = targetKelulusan - sekarang;
+
+            // Jika Belum Lulus (Waktu masih berjalan)
+            if (sisaWaktu > 0) {
+                const hari = Math.floor(sisaWaktu / (1000 * 60 * 60 * 24));
+                const jam = Math.floor((sisaWaktu % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const menit = Math.floor((sisaWaktu % (1000 * 60 * 60)) / (1000 * 60));
+                const detik = Math.floor((sisaWaktu % (1000 * 60)) / 1000);
+
+                const daysEl = document.getElementById("days");
+                const hoursEl = document.getElementById("hours");
+                const minutesEl = document.getElementById("minutes");
+                const secondsEl = document.getElementById("seconds");
+
+                if (daysEl) daysEl.innerText = hari;
+                if (hoursEl) hoursEl.innerText = jam < 10 ? "0" + jam : jam;
+                if (minutesEl) minutesEl.innerText = menit < 10 ? "0" + menit : menit;
+                if (secondsEl) secondsEl.innerText = detik < 10 ? "0" + detik : detik;
+            } 
+            // WAKTUNYA LULUS! (THE LAST DANCE)
+            else {
+              clearInterval(hitungMundur);
+              
+              const countdownDiv = document.getElementById("countdown");
+              if (countdownDiv) {
+                  countdownDiv.innerHTML = `
+                    <div class="last-dance-box">
+                        <h3 class="last-dance-title">🎓 HAPPY GRADUATION IX C! 🎓</h3>
+                        <p style="font-size: 1rem; margin-bottom: 15px;">Perjalanan 3 tahun kita telah selesai. Ini bukan akhir, tapi awal yang baru untuk kita semua!</p>
+                        <button id="btnConfetti" class="btn-confetti">Rayakan Kelulusan! 🎉</button>
+                    </div>
+                  `;
+              }
+
+              const audio = document.querySelector('audio');
+              if (audio) {
+                  audio.src = "Ini Abadi.mp3"; // Ganti dengan path file audio yang sesuai
+                  audio.play().catch(e => console.log("Lagu tertahan browser"));
+              }
+
+              const btnConfetti = document.getElementById("btnConfetti");
+              if (btnConfetti) {
+                  btnConfetti.addEventListener('click', () => {
+                      if (typeof confetti !== "undefined") {
+                          confetti({ particleCount: 150, spread: 80, origin: { y: 0.6 }, colors: ['#1ed598', '#3498db', '#f1c40f', '#e74c3c'] });
+                      }
+                  });
+              }
+            }
+          }, 1000);
+        </script>
+
+        <h2 class="section-title" style="margin-top: 40px">Buku Tamu / Pesan Kesan IX C</h2>
+        <div class="guestbook-box">
+          <form class="guestbook-form" id="guestbookForm">
+            <input type="text" id="senderName" placeholder="Nama Kamu..." required />
+            <input type="text" id="senderClass" placeholder="Kelas (contoh: VII, VIII, IX C)..." required />
+            <textarea id="senderMessage" rows="3" placeholder="Tulis kesan, pesan, atau doa..." required></textarea>
+            <button type="submit">Kirim Pesan</button>
+          </form>
+          <div class="messages-list" id="messagesList"></div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= HALAMAN RAHASIA ================= -->
+    <section id="rahasia" class="section-content">
+      <h2 class="section-title">Ruang Rahasia IX C 🔒</h2>
+
+      <div class="rahasia-box" id="kuis-rahasia">
+        <p style="text-align: center; margin-bottom: 20px">
+          Welcome to Easter Egg 🤫 IX-C, jawab 3 soal mtk ini dengan benar, dan kalian akan melihat sesuatu, JANGAN PAKAI AI YA!
+        </p>
+        <div class="soal-mtk"><label>1. Berapa hasil dari (10+10) kali 5, bagi 2, lalu di pangkat 2?</label><input type="number" id="jawaban1" placeholder="Jawabanmu..." /></div>
+        <div class="soal-mtk"><label>2.Selesaikan PLSV tersebut, 2(m-3)= 4m+8,tentukan M nya? </label><input type="number" id="jawaban2" placeholder="Jawabanmu..." /></div>
+        <div class="soal-mtk"><label>3. Selesaikan SPLDV tersebut, 2x + y = 8, x-y = 1, tentukan x dan y, masukan nilai x dan y nya jangan di koma maupun sepasi jadi xy seperti ini.</label><input type="number" id="jawaban3" placeholder="Jawabanmu..." /></div>
+        <button id="btn-tebak" class="btn-rahasia">Buka Kunci 🔓</button>
+      </div>
+
+     <div class="galeri-aib-tersembunyi" id="galeri-aib" style="display: none">
+        <h3 style="text-align: center; color: #e74c3c; margin-bottom: 15px; font-size: 1.8rem;">💥 SELAMAT DATANG DI GALERI AIB 💥</h3>
+        <p style="text-align: center; color: #555; margin-bottom: 25px">Berjanjilah untuk tidak membawa foto-foto ini keluar dari website ini... 😂</p>
+
+        <!-- KOTAK AIB 1 -->
+        <div class="kategori-galeri">
+          <h4 style="color: #e74c3c; margin-bottom: 10px; font-style: italic; padding-left: 10px;">📂 Top Secret File: Vol 1</h4>
+          <div class="slider-galeri" style="background: rgba(231, 76, 60, 0.05); border: 2px dashed #e74c3c; padding: 15px 10px; border-radius: 12px;">
+            <div class="galeri-item"><img src="gambar kelas (2).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar kelas (3).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar kelas (4).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar kelas (6).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar kelas (7).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar kelas (8).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar kelas (9).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar kelas (10).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar kelas (11).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar kelas (13).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar kelas (14).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar kelas (15).jpeg" alt="Aib" /><p></p></div>
+          </div>
+        </div>
+
+        <!-- KOTAK AIB 2 -->
+        <div class="kategori-galeri" style="margin-top: 30px;">
+          <h4 style="color: #e74c3c; margin-bottom: 10px; font-style: italic; padding-left: 10px;">📂 Top Secret File: Vol 2</h4>
+          <div class="slider-galeri" style="background: rgba(231, 76, 60, 0.05); border: 2px dashed #e74c3c; padding: 15px 10px; border-radius: 12px;">
+            <div class="galeri-item"><img src="gambar kelas (16).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar kelas (17).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar kelas (18).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar kelas (19).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar kelas (20).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar kelas (21).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar kelas (22).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar kelas (23).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar kelas (24).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar kelas (25).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar kelas (26).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar kelas (27).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar kelas (28).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar kelas (29).jpeg" alt="Aib" /><p></p></div>
+          </div>
+        </div>
+
+        <!-- KOTAK AIB 3 -->
+        <div class="kategori-galeri" style="margin-top: 30px;">
+          <h4 style="color: #e74c3c; margin-bottom: 10px; font-style: italic; padding-left: 10px;">📂 Top Secret File: Vol 3</h4>
+          <div class="slider-galeri" style="background: rgba(231, 76, 60, 0.05); border: 2px dashed #e74c3c; padding: 15px 10px; border-radius: 12px;">
+            <div class="galeri-item"><img src="gambar 6 (2).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar 6 (3).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar 6 (4).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar 6 (5).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar 6 (6).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar 6 (7).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar 6 (8).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar 6 (9).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar 6 (10).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar 6 (11).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar 6 (12).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar 6 (13).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar 6 (14).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar 6 (16).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="gambar 6 (18).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="aaa.jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="mmm.jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="kelas (1).jpeg" alt="Aib" /><p></p></div>
+             <div class="galeri-item"><img src="kelas (2).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="kelas (3).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="kelas (4).jpeg" alt="Aib" /><p></p></div>
+               <div class="galeri-item"><img src="kelas (5).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="kelas (6).jpeg" alt="Aib" /><p></p></div>
+            <div class="galeri-item"><img src="aib.jpeg" alt="Aib" /><p></p></div>
+            
+            
+
+          </div>
+        </div>
+
+      </div>
+
+      </div>
+    </section>
+    <footer>
+      <p>© 2026 Kelas 9C. Dibuat dengan semangat kekompakan.</p>
+      <p> IG: dytihfay_noaa</p>
+      <button class="admin-login-trigger" id="adminToggleBtn">
+        🔐 Mode Admin
+      </button>
+    </footer>
+
+    <!-- SEMUA WADAH POP-UP MODAL -->
+    <div class="modal-overlay" id="biodataModal">
+      <div class="modal-content">
+        <span class="close-btn" id="closeModal">&times;</span>
+        <h3 class="biodata-title">Biodata Profile</h3>
+        <ul class="biodata-list">
+          <li><strong>Nama Panjang:</strong> <span id="m-fullname"></span></li>
+          <li>
+            <strong>Nama Panggilan:</strong> <span id="m-nickname"></span>
+          </li>
+          <li><strong>Tanggal Lahir:</strong> <span id="m-birthday"></span></li>
+          <li><strong>Hobi:</strong> <span id="m-hobby"></span></li>
+          <li><strong>Ekskul:</strong> <span id="m-eskul"></span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="admin-modal-overlay" id="adminModalOverlay">
+      <div class="admin-modal-box">
+        <h3>🔐 Login Admin</h3>
+        <input
+          type="password"
+          id="adminPasswordInput"
+          placeholder="Masukkan Password Admin..."
+        />
+        <div class="admin-modal-btn-group">
+          <button class="admin-btn-submit" id="adminSubmitBtn">Masuk</button>
+          <button class="admin-btn-cancel" id="adminCancelBtn">Batal</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="admin-modal-overlay" id="deleteUserModal">
+      <div class="admin-modal-box">
+        <h3>🗑️ Hapus Pesan</h3>
+        <p style="font-size: 0.85rem; margin-bottom: 10px; color: #555">
+          Masukkan nama kamu (sesuai saat mengirim):
+        </p>
+        <input
+          type="text"
+          id="deleteUserNameInput"
+          placeholder="Nama pengirim..."
+        />
+        <div class="admin-modal-btn-group">
+          <button class="admin-btn-submit" id="deleteUserSubmitBtn">
+            Hapus
+          </button>
+          <button class="admin-btn-cancel" id="deleteUserCancelBtn">
+            Batal
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="admin-modal-overlay" id="deleteAdminModal">
+      <div class="admin-modal-box">
+        <h3>⚠️ Konfirmasi Admin</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 15px; color: #555">
+          Yakin ingin menghapus pesan ini selamanya?
+        </p>
+        <div class="admin-modal-btn-group">
+          <button class="admin-btn-submit" id="deleteAdminSubmitBtn">
+            Ya, Hapus
+          </button>
+          <button class="admin-btn-cancel" id="deleteAdminCancelBtn">
+            Batal
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="lightboxModal">
+      <div class="lightbox-content">
+        <span
+          class="close-btn"
+          id="lightboxClose"
+          style="color: black; font-size: 2rem; right: 15px; top: 10px"
+          >&times;</span
+        >
+        <img id="lightboxImg" src="" alt="Foto Galeri" />
+        <p class="lightbox-caption" id="lightboxCaption"></p>
+      </div>
+    </div>
+    <!-- POP-UP WARNING PESAN KESAN -->
+    <div class="modal-overlay" id="warningModal">
+      <div class="modal-content" style="text-align: center">
+        <h3 style="color: #e74c3c; margin-bottom: 10px; font-size: 1.5rem">
+          ⚠️ Perhatian!
+        </h3>
+        <p style="font-size: 0.95rem; margin-bottom: 25px; color: #555">
+          <strong>HALO PENGUNJUNG!</strong><br />Terima kasih sudah memberi
+          pesan dan kesan, pastikan tidak ada kalimat-kalimat anehh yaa, terima
+          kasihh 🙏
+        </p>
+        <div style="display: flex; gap: 10px; justify-content: center">
+          <button
+            id="btnYakinKirim"
+            style="
+              background: #1ed598;
+              color: white;
+              border: none;
+              padding: 10px 15px;
+              border-radius: 8px;
+              font-weight: bold;
+              cursor: pointer;
+              transition: 0.3s;
+            "
+          >
+            Yakin Kirim
+          </button>
+          <button
+            id="btnUlangiKetik"
+            style="
+              background: #e74c3c;
+              color: white;
+              border: none;
+              padding: 10px 15px;
+              border-radius: 8px;
+              font-weight: bold;
+              cursor: pointer;
+              transition: 0.3s;
+            "
+          >
+            Ulangi Mengetik
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- POP-UP WARNING AIB KELAS 🤫 -->
+    <div class="modal-overlay" id="aibWarningModal">
+      <div class="modal-content" style="text-align: center">
+        <h3 style="color: #e74c3c; margin-bottom: 15px; font-size: 1.5rem">
+          🤫 TOP SECRET!
+        </h3>
+        <p
+          style="
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            color: #555;
+            line-height: 1.6;
+          "
+        >
+          <strong
+            >SELAMAT KAMU TELAH BERHASIL MENJAWAB PERTANYAAN KAMI! 🎉</strong
+          ><br /><br />
+          Sekarang lihatlah moment lucu dari kelas IX C. Tolong jangan di SS
+          (Screenshot) dan disebar yaa, mohon bantuannya.<br /><br />
+          TERIMA KASIH 🙏
+        </p>
+        <button
+          id="btnPahamAib"
+          style="
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+            font-size: 1rem;
+          "
+        >
+          Oke, Saya Janji! 🤞
+        </button>
+      </div>
+    </div>
+    <!-- POP-UP PERINGATAN HALAMAN (DENGAN TOMBOL OKE) -->
+    <div class="modal-overlay" id="pageAlertModal">
+        <div class="modal-content" style="text-align: center;">
+            <h3 style="color: #2c3e50; margin-bottom: 15px; font-size: 1.5rem;">⚠️ Perhatian Pengunjung</h3>
+            <p style="font-size: 0.95rem; margin-bottom: 25px; color: #555; line-height: 1.6;" id="pageAlertMessage">
+                <!-- Teks peringatan akan diisi otomatis lewat JavaScript -->
+            </p>
+            <button id="btnPageAlertOk" style="background: #3498db; color: white; border: none; padding: 12px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; width: 100%; font-size: 1rem;">Oke, Saya Mengerti! 👍</button>
+        </div>
+    </div>
+    <button class="theme-toggle-btn" id="themeToggleBtn">🌙 Mode Gelap</button>
+    <!-- POP-UP GACHA QUOTE HARIAN -->
+    <div class="modal-overlay" id="gachaModal">
+        <div class="modal-content gacha-box">
+            <h3 style="color: #2c3e50; margin-bottom: 5px; font-size: 1.6rem;">Selamat Datang! 👋</h3>
+            <p id="hariSapaan" style="color: #1ed598; font-weight: bold; font-size: 1.1rem; margin-bottom: 15px;">Kamu berkunjung di hari ...</p>
+            
+            <div class="quote-display" id="quoteDisplay">
+                <p style="color: #7f8c8d; font-style: italic; font-size: 0.95rem;">"Klik tombol di bawah untuk melihat pesan harimu!"</p>
+            </div>
+            
+            <button id="btnGacha" class="btn-gacha">🎲 Gacha Kata-Kata Hari Ini</button>
+            <button id="btnTutupGacha" class="btn-tutup-gacha" style="display: none;">Mulai Jelajah 🚀</button>
+        </div>
+    </div>
+    <button id="musicToggleBtn" class="music-toggle-btn">🔊</button>
+<div id="toastContainer" class="toast-container"></div>
+
+    <!-- HANYA PANGGIL SCRIPT INI (JANGAN ADA SCRIPT LAIN) -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+    <script src="java.js"></script>
+  </body>
+</html>
